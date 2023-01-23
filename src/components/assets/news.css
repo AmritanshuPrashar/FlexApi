@@ -1,0 +1,15 @@
+.countryName{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .input-text{
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: none;
+  }
+  .input-text:focus{
+    border: none;
+  }
+  

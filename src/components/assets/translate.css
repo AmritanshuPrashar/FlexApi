@@ -1,0 +1,31 @@
+.App{
+    text-align: center;
+
+}
+
+.div-translate{
+    padding: 10px;
+}
+select{
+    padding: 5px;
+}
+.fromTo{
+    display: block;
+    padding: 5px;
+    margin: 5px;
+}
+.from{
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+}
+.to{
+    margin-right: 50px;
+    padding: 10px;
+}
+textarea::placeholder{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.693);
+}
