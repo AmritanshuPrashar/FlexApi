@@ -9,11 +9,13 @@ import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import StartPage from "./StartPage";
 import NewsContainer from "./components/NewsContainer";
+import Weather from "./components/Weather";
 function App() {
 	return (
 		<div className="App items-center">
 			<Routes >
 				<Route path="/" element={<StartPage />} />
+				<Route path="/weather" element={<Weather />} />
 				<Route path="/sentiment" element={<SemanticAnalyser />} />
 				<Route path='/translate' element={<TranslateText />} />
 				<Route path='/memes' element={<RandomMemeGen />} />

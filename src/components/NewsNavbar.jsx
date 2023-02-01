@@ -7,7 +7,7 @@ import Container from "react-bootstrap/Container";
 const NewsNavbar = () => {
 	return (
 		<>
-			<Navbar bg="dark" variant="dark">
+			<Navbar sticky="top" bg="dark" variant="dark">
 				<Container>
 					<Navbar.Brand href="/">Flex Api</Navbar.Brand>
 					<Nav className="me-auto">
