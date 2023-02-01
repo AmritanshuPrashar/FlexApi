@@ -1,18 +1,18 @@
 import React from "react";
-
+import { Container, Navbar, NavbarBrand } from "react-bootstrap";
+import '../App.css'
 
 const Footer = () => {
 return (
-	<div>
-    <p style={{
-      position: "relative",
-      top :"10px",
-      bottom:" 0",
-    width: "100%",
-    height: "50px"}}>
-		Made with 💓 by Amritanshu
-	</p>
-	</div>
+  <div className=" main-footer">  
+  <Navbar color="dark" dark>
+      <Container>
+        <NavbarBrand className="footer">Made with 💓 by Amritanshu</NavbarBrand>
+      </Container>
+  </Navbar>
+  </div>
 );
 };
 export default Footer;
+
+

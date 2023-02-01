@@ -65,3 +65,16 @@ body{
   display: flex;
   flex-direction: column;
 }
+
+.main-footer{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer{
+  font-size:16px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

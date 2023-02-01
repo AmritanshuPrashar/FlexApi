@@ -1,7 +1,14 @@
 .carousel-main{
-    width: 50%;
+    margin-top: 0;
+    width: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 25%;
+    margin-left: 40%;
+    height: 50%;
+    overflow: hidden;
+    object-fit: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     }
