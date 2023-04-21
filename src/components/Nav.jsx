@@ -37,12 +37,12 @@ export default function Nav() {
 									<div className="flex flex-shrink-0 items-center">
 										<img
 											className="block h-8 w-auto lg:hidden"
-											src="src/assets/images/crocodile.png"
+											src="crocodile.png"
 											alt="FlexApi"
 										/>
 										<img
 											className="hidden h-8 w-auto lg:block"
-											src="src/assets/images/crocodile.png"
+											src="/crocodile.png"
 											alt="FlexApi"
 										/>
 									</div>

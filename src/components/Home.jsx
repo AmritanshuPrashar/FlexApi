@@ -8,7 +8,7 @@ const Home = () => {
 			description: "Predicts the sentiment from the text you provides.",
 			link: "/sentimentanalyser",
 			color: "from-blue-500 to-purple-500",
-			image: "src/assets/images/sentiment.png",
+			image: "assets/images/sentiment.png",
 		},
 		{
 			id: 2,
@@ -16,7 +16,7 @@ const Home = () => {
 			description: "Randomly generates programming memes from Api.",
 			link: "/memes",
 			color: "from-green-500 to-teal-500",
-			image: "src/assets/images/memes.gif ",
+			image: "assets/images/memes.gif ",
 		},
 		{
 			id: 3,
@@ -24,7 +24,7 @@ const Home = () => {
 			description: "Provides weather information, uses OpenWeather Api",
 			link: "/aichat",
 			color: "from-yellow-500 to-red-500",
-			image: "src/assets/images/ai-chatbot-app.png",
+			image: "assets/images/ai-chatbot-app.png",
 		},
 		{
 			id: 4,
@@ -32,7 +32,7 @@ const Home = () => {
 			description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
 			link: "/weather",
 			color: "from-pink-500 to-rose-500",
-			image: "src/assets/images/weather-app.png",
+			image: "assets/images/weather-app.png",
 		},
 	];
 
