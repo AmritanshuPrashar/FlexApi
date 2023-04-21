@@ -4,10 +4,10 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
 const navigation = [
-	{ name: "Sentiment Analyser", href: "/sentimentanalyser", current: true },
+	{ name: "Sentiment Analyser", href: "/sentimentanalyser", current: false },
 	{ name: "Memes", href: "/memes", current: false },
-	{ name: "Projects", href: "#", current: false },
-	{ name: "Calendar", href: "#", current: false },
+	{ name: "Ai Chat", href: "/aichat", current: false },
+	{ name: "Weather", href: "/weather", current: false },
 ];
 
 function classNames(...classes) {
@@ -37,13 +37,13 @@ export default function Nav() {
 									<div className="flex flex-shrink-0 items-center">
 										<img
 											className="block h-8 w-auto lg:hidden"
-											src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-											alt="Your Company"
+											src="src/assets/images/crocodile.png"
+											alt="FlexApi"
 										/>
 										<img
 											className="hidden h-8 w-auto lg:block"
-											src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-											alt="Your Company"
+											src="src/assets/images/crocodile.png"
+											alt="FlexApi"
 										/>
 									</div>
 								</Link>

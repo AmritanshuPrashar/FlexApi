@@ -20,19 +20,19 @@ const Home = () => {
 		},
 		{
 			id: 3,
-			title: "Weather",
+			title: "Ai Chat",
 			description: "Provides weather information, uses OpenWeather Api",
-			link: "/feature3",
+			link: "/aichat",
 			color: "from-yellow-500 to-red-500",
-			image: "https://via.placeholder.com/300x200/9C27B0/FFFFFF",
+			image: "src/assets/images/ai-chatbot-app.png",
 		},
 		{
 			id: 4,
-			title: "Feature 4",
+			title: "Weather",
 			description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-			link: "/feature4",
+			link: "/weather",
 			color: "from-pink-500 to-rose-500",
-			image: "https://via.placeholder.com/300x200/E91E63/FFFFFF",
+			image: "src/assets/images/weather-app.png",
 		},
 	];
 
