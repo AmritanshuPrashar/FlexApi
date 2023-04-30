@@ -18,7 +18,7 @@ const Home = () => {
 			color: "from-green-500 to-teal-500",
 			image: "assets/images/memes.gif ",
 		},
-		{
+		{ 
 			id: 3,
 			title: "Ai Chat",
 			description: "Provides weather information, uses OpenWeather Api",
