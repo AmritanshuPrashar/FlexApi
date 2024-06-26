@@ -21,7 +21,7 @@ const Home = () => {
 		{ 
 			id: 3,
 			title: "Ai Chat",
-			description: "Provides weather information, uses OpenWeather Api",
+			description: "Use Google Gemini Api to chat with AI.",
 			link: "/aichat",
 			color: "from-yellow-500 to-red-500",
 			image: "assets/images/ai-chatbot-app.png",
@@ -29,7 +29,7 @@ const Home = () => {
 		{
 			id: 4,
 			title: "Weather",
-			description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+			description: "Provides weather information, uses OpenWeather Api.",
 			link: "/weather",
 			color: "from-pink-500 to-rose-500",
 			image: "assets/images/weather-app.png",

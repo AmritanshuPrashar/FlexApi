@@ -6,17 +6,33 @@ const App = () => {
   const [input, setInput] = useState('');
   const [response, setResponse] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const res = await axios.post('https://chatgpt-backend-repo.vercel.app/message', { message : input });
-      setResponse(res.data.result);
+      const res = await axios.post('https://gemini-ask-server.onrender.com/ask', { prompt: input });
+      setResponse(res.data.Response); // Fixed response data key
+      console.log(res);
     } catch (err) {
       console.log(err);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const checkStatus = async () => {
+    try {
+      const res = await axios.get('https://gemini-ask-server.onrender.com/check');
+      if (res.status === 200 && res.data.status === "ok") {
+        setStatus('ok');
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      setStatus('error');
+      console.log(err);
     }
   };
 
@@ -55,10 +71,33 @@ const App = () => {
             </button>
           </form>
           {response && !isLoading && (
-            <div className="mt-4">
-              <div className="bg-gray-200 rounded-lg px-4 py-2">
-                {response}
-              </div>
+            <div className="mt-4 max-h-48 overflow-y-auto bg-gray-200 rounded-lg px-4 py-2">
+              <pre className="whitespace-pre-wrap">{response}</pre>
+            </div>
+          )}
+          <button
+            onClick={checkStatus}
+            className="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-all duration-300"
+          >
+            Check AI Status
+          </button>
+          {status && (
+            <div className="mt-4 flex items-center justify-center">
+              {status === 'ok' ? (
+                <div className="flex items-center text-green-500">
+                  <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  AI is working fine
+                </div>
+              ) : (
+                <div className="flex items-center text-red-500">
+                  <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                  Something's wrong
+                </div>
+              )}
             </div>
           )}
         </div>

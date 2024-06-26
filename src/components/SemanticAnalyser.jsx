@@ -8,67 +8,47 @@ const SemanticAnalyzer = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const options = {
-      method: "POST",
-      url: "https://emodex-emotions-analysis.p.rapidapi.com/rapidapi/emotions",
-      headers: {
-        "content-type": "application/json",
-        "X-RapidAPI-Key": "d9e72d5342msha5223a25ee12e1fp176a8djsn77e13318c0fa",
-        "X-RapidAPI-Host": "emodex-emotions-analysis.p.rapidapi.com",
-      },
-      data: JSON.stringify({ sentence: query }),
-    };
 
     try {
-      const response = await axios.request(options);
-	  delete response.data.sentence.text;
-      const max = Object.entries(response.data.sentence).reduce(
-        (prev, curr) => {
-          return prev[1] > curr[1] ? prev : curr;
-        }
-		);
-		console.log(response.data.sentence)
-		setResult(max[0]);
-		console.log(result)	
+      const response = await axios.post("https://gemini-ask-server.onrender.com/ask", {
+        prompt: `${query}, that was a sentence now with one word what type of sentiment it was`
+      });
+      setResult(response.data.Response);
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <>
-      <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            Sentimental Analyzer
-          </h1>
-          <p className="text-gray-700 mb-8">
-            A Sentimental Analyzer using Rapid API
-          </p>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-6">
+      <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-8">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">Sentimental Analyzer</h1>
+          <p className="text-gray-600">Analyze the sentiment of your text using Rapid API</p>
         </div>
-        <form onSubmit={handleSubmit} className="mb-8">
+        <form onSubmit={handleSubmit} className="mb-6">
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Enter the paragraph."
-            className="px-4 py-2 text-gray-700 bg-white border-2 border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+            placeholder="Enter a sentence"
+            className="px-4 py-2 text-gray-700 bg-gray-100 border-2 border-gray-300 rounded-lg w-full mb-4 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
           />
           <button
             type="submit"
-            className="ml-2 px-4 py-2 text-white bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:bg-purple-700"
+            className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-all duration-300 focus:outline-none focus:bg-purple-700"
           >
-            Search
+            Analyze
           </button>
         </form>
-        <div className="my-4 p-4 bg-white rounded-md shadow-md">
-          <h3 className="text-lg font-medium text-gray-900">Result : </h3>
-          <p className="text-gray-700">
+        <div className="p-4 bg-gray-50 rounded-lg shadow-inner">
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Result:</h3>
+          <p className="text-2xl">
             <DisplayText value={result} />
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
